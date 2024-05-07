@@ -3,9 +3,9 @@
 #### Script to interact with NASA's Near Earth Object Web Service (NeoWs) to retrieve data about near-Earth objects (NEOs) detected within the last 7 days.
 
 ## Table of contents
-* [How to use it](#How-to-use-it)
 * [Technologies Used](#Technologies-Used)
 * [Installation](#Installation)
+* [How to use it](#How-to-use-it)
 
   
 
@@ -18,3 +18,5 @@
 ```go
 go get NEOs
 ```
+
+## How to use it
