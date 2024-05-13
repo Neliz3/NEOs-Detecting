@@ -2,11 +2,8 @@ package configs
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"time"
-
-	"github.com/joho/godotenv"
 )
 
 type Config struct {
@@ -14,13 +11,14 @@ type Config struct {
 	Link    string
 }
 
-func ReadConfigs() *Config {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatalf("Failed to read .env: %v", err)
-	}
+func ReadConfigs(api_key ...string) *Config {
+	var API_KEY string
 
-	API_KEY := os.Getenv("API_KEY")
+	if api_key != nil {
+		API_KEY = api_key[0]
+	} else {
+		API_KEY = os.Getenv("DEMO_API_KEY")
+	}
 
 	config := Config{
 		API_KEY: API_KEY,
