@@ -14,9 +14,9 @@
 * Docker
 
 
-## Installation
-```go
-go get NEOs
-```
+## How to run:
 
-## How to use it
+1. Using docker container:
+    - Create your own .env file with keys listed in sample.env, then you can fill the values.
+    - Set the specified values of build_args in docker-compose file.
+    - Run docker-compose up to fetch and build images need for this project.
