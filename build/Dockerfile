@@ -2,12 +2,11 @@ FROM golang:latest
 
 ARG API_KEY
 
-COPY ./ ./
+COPY ./ /app
 
+WORKDIR /app
 
-ENV HOME /
+ENV HOME=/
+ENV API_KEY=${API_KEY}
 
-ENTRYPOINT ["{API_KEY}"]
-
-WORKDIR /NEOs/
 CMD ["go", "run", "./cmd/main.go"]

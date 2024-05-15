@@ -11,12 +11,12 @@ type Config struct {
 	Link    string
 }
 
-func ReadConfigs(api_key ...string) *Config {
+func ReadConfigs() *Config {
 	var API_KEY string
 
-	if api_key != nil {
-		API_KEY = api_key[0]
-	} else {
+	API_KEY = os.Getenv("API_KEY")
+
+	if API_KEY == "" {
 		API_KEY = os.Getenv("DEMO_API_KEY")
 	}
 

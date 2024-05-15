@@ -4,8 +4,7 @@
 
 ## Table of contents
 * [Technologies Used](#Technologies-Used)
-* [Installation](#Installation)
-* [How to use it](#How-to-use-it)
+* [How to run](#How-to-run)
 
   
 
@@ -15,8 +14,9 @@
 
 
 ## How to run:
-
-1. Using docker container:
-    - Create your own .env file with keys listed in sample.env, then you can fill the values.
-    - Set the specified values of build_args in docker-compose file.
-    - Run docker-compose up to fetch and build images need for this project.
+Run the following commands:
+1. To create a Docker image: 
+```docker build -f build Dockerfile -t neos .```
+2. Go to https://api.nasa.gov/ and generate your own API key.
+3. Enter a generated API key:
+```docker run -e API_KEY='DEMO_KEY' neos ```
